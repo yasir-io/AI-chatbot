@@ -21,7 +21,91 @@
     background-color: rgb(0,0,17);
    }
 
+   #d{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: none;
+    background-color: #fdfdfd;
+    padding: 20px;
+    width: 350px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 5px rgb(0, 0, 17);
+  }
+  #d p{
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    width: 95%;
+    line-height: 22px;
+    font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Saira Condensed', sans-serif;
+  line-height: 22px;
   
+  font-weight: bolder;
+  }
+  #open{
+   margin-left: 0px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: #fdfdfd;
+    font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Saira Condensed', sans-serif;
+  line-height: 19px;
+  letter-spacing: .1em;
+  margin-top: 10px;
+  }
+  #open:hover{
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+    
+  }
+  #close{
+   margin-left: 170px;
+   padding: 8px;
+    position: absolute;
+    top: 85%;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(250, 82, 82);
+    font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Saira Condensed', sans-serif;
+  line-height: 19px;
+  letter-spacing: .1em;
+  font-weight: bolder;
+  
+  }
+  #close:hover{
+    background-color: crimson;
+  }
+  @media screen and (max-width: 385px) {
+    #d{
+      width: 300px;
+    }
+    #close{
+      margin-left: 130px;
+    }
+    #d p{
+      color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    width: 95%;
+    line-height: 22px;
+    }
+    
+  
+  }
     </style>
   <script
 	type="module"
@@ -30,33 +114,26 @@
 
 <gradio-app src="https://mygyasir-chatai.hf.space"></gradio-app>
 
-<script>
+
     
-
-</script>
-
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.2.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyBTTX_lemezj1385jz-TC4JKOIYqOm4KB4",
-      authDomain: "electrosion.firebaseapp.com",
-      projectId: "electrosion",
-      storageBucket: "electrosion.appspot.com",
-      messagingSenderId: "647215897639",
-      appId: "1:647215897639:web:28a6bf558e20206d420202",
-      measurementId: "G-9DV9H2GZML"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
+    <dialog id="d">
+        <p>Join Our discord for electrosion latest news and be the first to try our upcoming features. interact with our amazing Community share your feedback and opinions with us!</p>
+        <button id="open">JOIN DISCORD</button>
+        <button id="close">close</button>
+      </dialog>
+      <script>
+        let btn =  document.getElementById('d')
+        let bt =  document.getElementById('open')
+        bt.onclick = ()=>{
+         window.open('https://discord.gg/U3RA9mbWm')
+        }
+        setTimeout(()=>{
+         btn.show()
+        },4000)
+        let cb = document.getElementById('close')
+        cb.onclick = ()=>{
+         btn.close()
+        }
+       </script>
 </body>
 </html>
